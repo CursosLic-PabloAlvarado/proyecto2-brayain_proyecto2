@@ -85,6 +85,7 @@ def training_step(batch_size):
         all_Q_values = main_nn(tf.convert_to_tensor(np.stack([np.array(state, dtype=object) for state in states]).astype('float32')))
         Q_values = tf.reduce_sum(all_Q_values * mask, axis=1, keepdims=True)
         loss = tf.reduce_mean(loss_fn(target_Q_values.astype('float32'), Q_values))
+        print(loss)
     grads = tape.gradient(loss, main_nn.trainable_variables)
     optimizer.apply_gradients(zip(grads, main_nn.trainable_variables))
 
