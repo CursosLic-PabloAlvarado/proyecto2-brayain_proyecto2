@@ -102,7 +102,7 @@ for episode in range(600):
         obs, reward = play_one_step(env, obs, epsilon)
 
         if episode > 50:
-            training_step(32)
+            training_step(16)
     print(f"Episode: {episode}")
     
 main_nn.save('my_dqn.h5')
