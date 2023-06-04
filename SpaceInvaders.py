@@ -80,8 +80,15 @@ def training_step(batch_size):
     mask = tf.one_hot(actions.astype('int32'), n_outputs)
     with tf.GradientTape() as tape:
         for i in range(len(states)):
-            if isinstance(states[i], tuple):
+            if isinstance(states[i], tuple) and len(states[i]) == 2 and isinstance(states[i][0], np.ndarray) and isinstance(states[i][1], dict):
+                states[i] = states[i][0]
+            elif states[i].shape != (210, 160, 3):
                 states[i] = states[i-1]
+        #for element in states:
+            #print(element.shape)
+            #print(element.dtype)
+            
+
         all_Q_values = main_nn(tf.convert_to_tensor(np.stack([np.array(state, dtype=object) for state in states]).astype('float32')))
         Q_values = tf.reduce_sum(all_Q_values * mask, axis=1, keepdims=True)
         loss = tf.reduce_mean(loss_fn(target_Q_values.astype('float32'), Q_values))
