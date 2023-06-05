@@ -3,6 +3,8 @@ from tensorflow import keras
 import numpy as np
 from collections import deque
 
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
 from ale_py import ALEInterface
 from ale_py.roms import SpaceInvaders
 import pathlib
