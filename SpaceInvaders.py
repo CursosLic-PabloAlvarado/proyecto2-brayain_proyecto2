@@ -9,6 +9,7 @@ from ale_py import ALEInterface
 from ale_py.roms import SpaceInvaders
 import pathlib
 import gymnasium as gym
+import os.path
 
 ale = ALEInterface()
 
@@ -86,11 +87,6 @@ def training_step(batch_size):
                 states[i] = states[i][0]
             elif states[i].shape != (210, 160, 3):
                 states[i] = states[i-1]
-        #for element in states:
-            #print(element.shape)
-            #print(element.dtype)
-            
-
         all_Q_values = main_nn(tf.convert_to_tensor(np.stack([np.array(state, dtype=object) for state in states]).astype('float32')))
         Q_values = tf.reduce_sum(all_Q_values * mask, axis=1, keepdims=True)
         loss = tf.reduce_mean(loss_fn(target_Q_values.astype('float32'), Q_values))
@@ -98,24 +94,49 @@ def training_step(batch_size):
     grads = tape.gradient(loss, main_nn.trainable_variables)
     optimizer.apply_gradients(zip(grads, main_nn.trainable_variables))
 
-    
 
-for episode in range(600):
+def play_one_step_train(env, state, model):
+    # Verificar si el estado es una tupla
+    if isinstance(state, tuple) and len(state) == 2 and isinstance(state[0], np.ndarray):
+        state = state[0]
+
+    # Utilizar el modelo para predecir acciones
+    Q_values = model.predict(state[np.newaxis])
+    action = np.argmax(Q_values[0])
     
-    if episode == 590:
-        env = gym.make('ALE/SpaceInvaders-v5', render_mode='human')
-    
+    next_state, reward, done, _,_ = env.step(action)
+    if next_state.dtype == np.uint8:
+        replay_buffer.append((state, action, reward, next_state, done))
+    return next_state, reward
+
+model_file = 'C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/my_dqn.h5'
+
+if os.path.isfile(model_file):
+    model = keras.models.load_model(model_file)
+
+    env = gym.make('ALE/SpaceInvaders-v5', render_mode='human')
     obs = env.reset()
-    
-    for step in range(200):
-        epsilon = max(1 - episode / 500, 0.01)
-        obs, reward = play_one_step(env, obs, epsilon)
 
-        if episode > 50:
-            training_step(16)
-    print(f"Episode: {episode}")
-    
-main_nn.save('my_dqn.h5')
+    while True:
+        obs, reward = play_one_step_train(env, obs, model)
+
+
+else:
+    for episode in range(300):
+        
+        if episode == 590:
+            env = gym.make('ALE/SpaceInvaders-v5', render_mode='human')
+        
+        obs = env.reset()
+        
+        for step in range(150):
+            epsilon = max(1 - episode / 500, 0.01)
+            obs, reward = play_one_step(env, obs, epsilon)
+
+            if episode > 50:
+                training_step(16)
+        print(f"Episode: {episode}")    
+    main_nn.save('my_dqn.h5')
 
 
 
