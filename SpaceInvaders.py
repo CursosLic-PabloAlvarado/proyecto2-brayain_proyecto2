@@ -65,7 +65,7 @@ def sample_experiences(batch_size):
     
 def play_one_step(env, state, epsilon):
     action = epsilon_greedy_policy(state, epsilon)
-    next_state, reward, done, _,_ = env.step(action)
+    next_state, reward, done, _,info = env.step(action)
     if next_state.dtype == np.uint8:
         replay_buffer.append((state, action, reward, next_state, done))
     return next_state, reward
@@ -109,7 +109,7 @@ def play_one_step_train(env, state, model):
         replay_buffer.append((state, action, reward, next_state, done))
     return next_state, reward
 
-model_file = 'C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/my_dqn.h5'
+model_file = 'C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/my_dqn_2.h5'
 
 if os.path.isfile(model_file):
     model = keras.models.load_model(model_file)
@@ -122,10 +122,7 @@ if os.path.isfile(model_file):
 
 
 else:
-    for episode in range(300):
-        
-        if episode == 590:
-            env = gym.make('ALE/SpaceInvaders-v5', render_mode='human')
+    for episode in range(200):
         
         obs = env.reset()
         
@@ -133,10 +130,10 @@ else:
             epsilon = max(1 - episode / 500, 0.01)
             obs, reward = play_one_step(env, obs, epsilon)
 
-            if episode > 50:
-                training_step(16)
+            if episode > 70:
+                training_step(50)
         print(f"Episode: {episode}")    
-    main_nn.save('my_dqn.h5')
+    main_nn.save('my_dqn_2.h5')
 
 
 
