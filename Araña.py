@@ -119,8 +119,8 @@ if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_pr
 
     # Si los archivos de entrenamiento existen, carga el modelo desde los archivos
     ppo = PPO(state_dim=state_dim, action_dim=action_dim)
-    ppo.actor.load_state_dict(torch.load('ppo_actor_model.pt'))
-    ppo.critic.load_state_dict(torch.load('ppo_critic_model.pt'))
+    ppo.actor.load_state_dict(torch.load('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_actor_model.pt'))
+    ppo.critic.load_state_dict(torch.load('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_critic_model.pt'))
 
     # Código para mostrar en pantalla como se mueve el objeto con los datos de entrenamiento guardados
     state = extract_state(env.reset())
