@@ -100,7 +100,7 @@ def extract_state(output):
 env = gym.make('Ant-v4',
                render_mode='human',
                ctrl_cost_weight=0.1,
-               use_contact_forces=False,
+               use_contact_forces=True,
                healthy_reward=1, 
                healthy_z_range=(0.2, 1.0),
                terminate_when_unhealthy=False)
