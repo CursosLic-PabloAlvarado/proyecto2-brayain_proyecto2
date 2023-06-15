@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 import gym
+import os.path
 from torch.distributions import Normal
 
 class Actor(nn.Module):
@@ -114,34 +115,50 @@ ppo=PPO(state_dim=state_dim,
 num_episodes=1000
 num_steps=1000
 
+if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_actor_model.pt')and os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_critic_model.pt'):
 
-for episode in range(num_episodes):
-    state=extract_state(env.reset())
-    rewards=[]
-    states=[]
-    actions=[]
-    log_probs=[]
-    values=[]
+    # Si los archivos de entrenamiento existen, carga el modelo desde los archivos
+    ppo = PPO(state_dim=state_dim, action_dim=action_dim)
+    ppo.actor.load_state_dict(torch.load('ppo_actor_model.pt'))
+    ppo.critic.load_state_dict(torch.load('ppo_critic_model.pt'))
 
+    # Código para mostrar en pantalla como se mueve el objeto con los datos de entrenamiento guardados
+    state = extract_state(env.reset())
     for step in range(num_steps):
-        action,log_prob,value=ppo.select_action(state)
-        next_state,reward,_ ,_ ,_=env.step(action)
+        action, _, _ = ppo.select_action(state)
+        next_state, reward, _, _, _ = env.step(action)
+        env.render()
+        state = extract_state(next_state)
+    env.close()
+else:
+    # Si los archivos de entrenamiento no existen, entrena el modelo y guarda los archivos
+    for episode in range(num_episodes):
+        state=extract_state(env.reset())
+        rewards=[]
+        states=[]
+        actions=[]
+        log_probs=[]
+        values=[]
 
-        rewards.append(reward)
-        states.append(state)
-        actions.append(action)
-        log_probs.append(log_prob)
-        values.append(value)
+        for step in range(num_steps):
+            action,log_prob,value=ppo.select_action(state)
+            next_state,reward,_ ,_ ,_=env.step(action)
 
-        state=next_state
+            rewards.append(reward)
+            states.append(state)
+            actions.append(action)
+            log_probs.append(log_prob)
+            values.append(value)
 
-    _,_,value_next=ppo.select_action(state)
-    returns=compute_returns(rewards,value_next)
+            state=next_state
 
-    ppo.update(states,actions,log_probs,returns)
+        _,_,value_next=ppo.select_action(state)
+        returns=compute_returns(rewards,value_next)
 
-    print(f'Episode: {episode+1}, Reward: {sum(rewards)}')
+        ppo.update(states,actions,log_probs,returns)
 
-# Guarda el modelo en un archivo después de que haya sido entrenado
-torch.save(ppo.actor.state_dict(), 'ppo_actor_model.pt')
-torch.save(ppo.critic.state_dict(), 'ppo_critic_model.pt')
+        print(f'Episode: {episode+1}, Reward: {sum(rewards)}')
+
+    # Guarda el modelo en un archivo después de que haya sido entrenado
+    torch.save(ppo.actor.state_dict(), 'ppo_actor_model.pt')
+    torch.save(ppo.critic.state_dict(), 'ppo_critic_model.pt')
