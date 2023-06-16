@@ -13,7 +13,7 @@ env = gym.make('Ant-v4',
                render_mode='human',
                ctrl_cost_weight=0.1,
                use_contact_forces=False,
-               healthy_reward=0.9, 
+               healthy_reward=1, 
                healthy_z_range=(0.2, 8.0),
                terminate_when_unhealthy=False)
 
