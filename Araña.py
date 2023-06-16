@@ -5,6 +5,7 @@ import torch.optim as optim
 import torch.nn.functional as F
 import gym
 import os.path
+import numpy as np
 from torch.distributions import Normal
 
 class Actor(nn.Module):
@@ -16,8 +17,8 @@ class Actor(nn.Module):
         self.sigma_head = nn.Linear(64, action_dim)
 
     def forward(self, x):
-        x = torch.tanh(self.fc1(x))
-        x = torch.tanh(self.fc2(x))
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
         mu = torch.tanh(self.mu_head(x))
         sigma = F.softplus(self.sigma_head(x))
         return mu, sigma
@@ -30,8 +31,8 @@ class Critic(nn.Module):
         self.v_head = nn.Linear(64, 1)
 
     def forward(self, x):
-        x = torch.tanh(self.fc1(x))
-        x = torch.tanh(self.fc2(x))
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
         v = self.v_head(x)
         return v
 
@@ -40,8 +41,8 @@ class PPO:
     def __init__(self, state_dim, action_dim):
         self.actor = Actor(state_dim, action_dim)
         self.critic = Critic(state_dim)
-        self.actor_optimizer = optim.Adam(self.actor.parameters(), lr=3e-4)
-        self.critic_optimizer = optim.Adam(self.critic.parameters(), lr=3e-4)
+        self.actor_optimizer = optim.Adam(self.actor.parameters(), lr=1e-4) ## 3e-4
+        self.critic_optimizer = optim.Adam(self.critic.parameters(), lr=1e-4)
 
     def select_action(self, state):
         with torch.no_grad():
@@ -81,6 +82,32 @@ class PPO:
             critic_loss_new.backward(retain_graph=True)
             self.critic_optimizer.step()
         return actor_loss_new.item(), critic_loss_new.item()
+    
+class RewardNormalizer:
+    def __init__(self, gamma=0.99):
+        self.gamma = gamma
+        self.mean = 0
+        self.var = 1
+
+    def normalize(self, rewards):
+        # Calcula la media y la varianza con descuento
+        discounted_rewards = [self.gamma ** i * r for i, r in enumerate(rewards)]
+        mean = np.mean(discounted_rewards)
+        var = np.var(discounted_rewards)
+
+        # Actualiza la media y la varianza con un factor de olvido
+        alpha = 0.9
+        self.mean = alpha * self.mean + (1 - alpha) * mean
+        self.var = alpha * self.var + (1 - alpha) * var
+
+        # Normaliza las recompensas
+        std = np.sqrt(self.var)
+        normalized_rewards = (rewards - self.mean) / (std + 1e-8)
+        return normalized_rewards.tolist()
+
+reward_normalizer = RewardNormalizer()
+
+
 
 def compute_returns(rewards, values_next, gamma=0.99):
     R = values_next
@@ -102,13 +129,34 @@ env = gym.make('Ant-v4',
                render_mode='human',
                ctrl_cost_weight=0.25,
                use_contact_forces=True,
-               healthy_reward=3, 
+               healthy_reward=1.5, 
                healthy_z_range=(0.2, 1.0),
                terminate_when_unhealthy=False)
 
 
 state_dim=env.observation_space.shape[0]
 action_dim=env.action_space.shape[0]
+
+class ObservationNormalizer:
+    def __init__(self, observation_dim):
+        self.n = 0
+        self.mean = np.zeros(observation_dim)
+        self.var = np.ones(observation_dim)
+
+    def normalize(self, observation):
+        # Actualiza la media y la varianza con el algoritmo Welford
+        self.n += 1
+        delta = observation - self.mean
+        self.mean += delta / self.n
+        delta2 = observation - self.mean
+        self.var += delta * delta2
+
+        # Normaliza la observación
+        std = np.sqrt(self.var / (self.n + 1e-8))
+        normalized_observation = (observation - self.mean) / (std + 1e-8)
+        return normalized_observation
+
+observation_normalizer = ObservationNormalizer(observation_dim=state_dim)
 
 ppo=PPO(state_dim=state_dim,
        action_dim=action_dim)
@@ -135,6 +183,7 @@ else:
     # Si los archivos de entrenamiento no existen, entrena el modelo y guarda los archivos
     for episode in range(num_episodes):
         state=extract_state(env.reset())
+        state = observation_normalizer.normalize(state)
         rewards=[]
         states=[]
         actions=[]
@@ -144,6 +193,8 @@ else:
         for step in range(num_steps):
             action,log_prob,value=ppo.select_action(state)
             next_state,reward,_ ,_ ,_=env.step(action)
+            next_state = extract_state(next_state)
+            next_state = observation_normalizer.normalize(next_state)
 
             rewards.append(reward)
             states.append(state)
@@ -152,6 +203,9 @@ else:
             values.append(value)
 
             state=next_state
+
+        # Normaliza las recompensas
+        rewards = reward_normalizer.normalize(rewards)
 
         _,_,value_next=ppo.select_action(state)
         returns=compute_returns(rewards,value_next)
