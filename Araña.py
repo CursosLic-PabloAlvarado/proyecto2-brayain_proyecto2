@@ -80,6 +80,7 @@ class PPO:
             self.critic_optimizer.zero_grad()
             critic_loss_new.backward(retain_graph=True)
             self.critic_optimizer.step()
+        return actor_loss_new.item(), critic_loss_new.item()
 
 def compute_returns(rewards, values_next, gamma=0.99):
     R = values_next
@@ -99,9 +100,9 @@ def extract_state(output):
 
 env = gym.make('Ant-v4',
                render_mode='human',
-               ctrl_cost_weight=0.1,
+               ctrl_cost_weight=0.25,
                use_contact_forces=True,
-               healthy_reward=1, 
+               healthy_reward=3, 
                healthy_z_range=(0.2, 1.0),
                terminate_when_unhealthy=False)
 
@@ -155,9 +156,9 @@ else:
         _,_,value_next=ppo.select_action(state)
         returns=compute_returns(rewards,value_next)
 
-        ppo.update(states,actions,log_probs,returns)
+        actor_loss, critic_loss = ppo.update(states,actions,log_probs,returns)
 
-        print(f'Episode: {episode+1}, Reward: {sum(rewards)}')
+        print(f'Episode: {episode+1}, Reward: {sum(rewards)}, Actor Loss: {actor_loss}, Critic Loss: {critic_loss}')
 
     # Guarda el modelo en un archivo después de que haya sido entrenado
     torch.save(ppo.actor.state_dict(), 'ppo_actor_model.pt')
