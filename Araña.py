@@ -8,6 +8,15 @@ import os.path
 import numpy as np
 from torch.distributions import Normal
 
+
+env = gym.make('Ant-v4',
+               render_mode='human',
+               ctrl_cost_weight=0.25,
+               use_contact_forces=True,
+               healthy_reward=1.5, 
+               healthy_z_range=(0.2, 1.0),
+               terminate_when_unhealthy=False)
+
 class Actor(nn.Module):
     def __init__(self, state_dim, action_dim):
         super(Actor, self).__init__()
@@ -107,33 +116,6 @@ class RewardNormalizer:
 
 reward_normalizer = RewardNormalizer()
 
-
-
-def compute_returns(rewards, values_next, gamma=0.99):
-    R = values_next
-    returns = []
-    for r in reversed(rewards):
-        R = r + gamma * R
-        returns.insert(0,R)
-    return returns
-
-def extract_state(output):
-    if isinstance(output, tuple):
-        state = output[0]
-    else:
-        state = output
-    return state
-
-
-env = gym.make('Ant-v4',
-               render_mode='human',
-               ctrl_cost_weight=0.25,
-               use_contact_forces=True,
-               healthy_reward=1.5, 
-               healthy_z_range=(0.2, 1.0),
-               terminate_when_unhealthy=False)
-
-
 state_dim=env.observation_space.shape[0]
 action_dim=env.action_space.shape[0]
 
@@ -157,6 +139,22 @@ class ObservationNormalizer:
         return normalized_observation
 
 observation_normalizer = ObservationNormalizer(observation_dim=state_dim)
+
+def compute_returns(rewards, values_next, gamma=0.99):
+    R = values_next
+    returns = []
+    for r in reversed(rewards):
+        R = r + gamma * R
+        returns.insert(0,R)
+    return returns
+
+def extract_state(output):
+    if isinstance(output, tuple):
+        state = output[0]
+    else:
+        state = output
+    return state
+
 
 ppo=PPO(state_dim=state_dim,
        action_dim=action_dim)
