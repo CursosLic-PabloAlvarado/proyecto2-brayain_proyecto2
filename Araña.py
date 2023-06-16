@@ -11,10 +11,10 @@ from torch.distributions import Normal
 
 env = gym.make('Ant-v4',
                render_mode='human',
-               ctrl_cost_weight=0.25,
-               use_contact_forces=True,
-               healthy_reward=1.5, 
-               healthy_z_range=(0.2, 1.0),
+               ctrl_cost_weight=0.1,
+               use_contact_forces=False,
+               healthy_reward=0.9, 
+               healthy_z_range=(0.2, 3.0),
                terminate_when_unhealthy=False)
 
 class Actor(nn.Module):
@@ -22,12 +22,14 @@ class Actor(nn.Module):
         super(Actor, self).__init__()
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
+        self.fc3 = nn.Linear(64, 64)
         self.mu_head = nn.Linear(64, action_dim)
         self.sigma_head = nn.Linear(64, action_dim)
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
+        x = F.relu(self.fc3(x))
         mu = torch.tanh(self.mu_head(x))
         sigma = F.softplus(self.sigma_head(x))
         return mu, sigma
@@ -37,11 +39,13 @@ class Critic(nn.Module):
         super(Critic, self).__init__()
         self.fc1 = nn.Linear(state_dim, 64)
         self.fc2 = nn.Linear(64, 64)
+        self.fc3 = nn.Linear(64, 64)
         self.v_head = nn.Linear(64, 1)
 
     def forward(self, x):
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
+        x = F.relu(self.fc3(x))
         v = self.v_head(x)
         return v
 
@@ -159,8 +163,8 @@ def extract_state(output):
 ppo=PPO(state_dim=state_dim,
        action_dim=action_dim)
 
-num_episodes=1000
-num_steps=1000
+num_episodes=500
+num_steps=2000
 
 if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_actor_model.pt')and os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_critic_model.pt'):
 
