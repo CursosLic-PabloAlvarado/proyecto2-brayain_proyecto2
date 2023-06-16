@@ -14,7 +14,7 @@ env = gym.make('Ant-v4',
                ctrl_cost_weight=0.1,
                use_contact_forces=False,
                healthy_reward=0.9, 
-               healthy_z_range=(0.2, 3.0),
+               healthy_z_range=(0.2, 8.0),
                terminate_when_unhealthy=False)
 
 class Actor(nn.Module):
@@ -165,6 +165,7 @@ ppo=PPO(state_dim=state_dim,
 
 num_episodes=500
 num_steps=2000
+num_steps_rend=5000
 
 if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_actor_model.pt')and os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_critic_model.pt'):
 
@@ -175,7 +176,7 @@ if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_pr
 
     # Código para mostrar en pantalla como se mueve el objeto con los datos de entrenamiento guardados
     state = extract_state(env.reset())
-    for step in range(num_steps):
+    for step in range(num_steps_rend):
         action, _, _ = ppo.select_action(state)
         next_state, reward, _, _, _ = env.step(action)
         env.render()
