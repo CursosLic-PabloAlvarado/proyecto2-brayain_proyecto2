@@ -10,11 +10,11 @@ import pathlib
 import gymnasium as gym
 import os.path
 
+print(tf.__version__)
+tf.config.list_physical_devices('GPU')
+print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+
 ale = ALEInterface()
-
-def roms() -> list[pathlib.Path]:
-    pass
-
 ale.loadROM(SpaceInvaders)
 
 env = gym.make('ALE/SpaceInvaders-v5')
@@ -122,7 +122,7 @@ if os.path.isfile(model_file):
 
 else:
     wandb.init(project="SI Project")
-    for episode in range(600):
+    for episode in range(400):
         
         obs = env.reset()
         
@@ -135,7 +135,7 @@ else:
 
                 wandb.log({"episode": episode, "total_reward": reward, "loss": loss})
         print(f"Episode: {episode}")    
-    main_nn.save('my_dqn_2.h5')
+    main_nn.save('my_dqn_f.h5')
 
 
 
