@@ -9,13 +9,44 @@ import numpy as np
 from torch.distributions import Normal
 
 
+class CustomAntEnv(gym.Wrapper):
+    def __init__(self, env):
+        super().__init__(env)
+        self.prev_x_position = None
+        self.prev_y_position = None
+        self.num_steps = 0
+
+    def step(self, action):
+        next_state, reward, done, info,_ = self.env.step(action)
+        # Aquí puedes calcular la recompensa personalizada
+        # Por ejemplo, si quieres dar una recompensa por moverse cierta distancia en x:
+        x_position = next_state[0]
+        y_position = next_state[1]
+        if self.prev_x_position is not None:
+            x_distance = x_position - self.prev_x_position
+            if x_distance > 0.01:
+                reward += 2
+            elif x_distance < -0.01:
+                reward -= 1
+        if self.prev_y_position is not None:
+            y_distance = y_position - self.prev_y_position
+            if abs(y_distance) > 0.05:
+                reward -= 1
+        self.prev_x_position = x_position
+        self.prev_y_position = y_position
+        self.num_steps += 1
+
+        return next_state, reward, done, info
+
 env = gym.make('Ant-v4',
                render_mode='human',
                ctrl_cost_weight=0.1,
-               use_contact_forces=False,
+               use_contact_forces=True,
                healthy_reward=1, 
-               healthy_z_range=(0.2, 8.0),
+               healthy_z_range=(0.2, 2.0),
                terminate_when_unhealthy=False)
+
+custom_env = CustomAntEnv(env)
 
 class Actor(nn.Module):
     def __init__(self, state_dim, action_dim):
@@ -54,8 +85,8 @@ class PPO:
     def __init__(self, state_dim, action_dim):
         self.actor = Actor(state_dim, action_dim)
         self.critic = Critic(state_dim)
-        self.actor_optimizer = optim.Adam(self.actor.parameters(), lr=1e-4) ## 3e-4
-        self.critic_optimizer = optim.Adam(self.critic.parameters(), lr=1e-4)
+        self.actor_optimizer = optim.Adam(self.actor.parameters(), lr=1.5e-4) ## 3e-4
+        self.critic_optimizer = optim.Adam(self.critic.parameters(), lr=1.5e-4)
 
     def select_action(self, state):
         with torch.no_grad():
@@ -163,9 +194,9 @@ def extract_state(output):
 ppo=PPO(state_dim=state_dim,
        action_dim=action_dim)
 
-num_episodes=500
-num_steps=2000
-num_steps_rend=5000
+num_episodes=200
+num_steps=3000
+num_steps_rend=10000
 
 if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_actor_model.pt')and os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_proyecto2/ppo_critic_model.pt'):
 
@@ -178,7 +209,7 @@ if os.path.isfile('C:/Users/Gollo/OneDrive/Desktop/PROY2-AA/proyecto2-brayain_pr
     state = extract_state(env.reset())
     for step in range(num_steps_rend):
         action, _, _ = ppo.select_action(state)
-        next_state, reward, _, _, _ = env.step(action)
+        next_state, reward, _, _= custom_env.step(action)
         env.render()
         state = extract_state(next_state)
     env.close()
@@ -195,7 +226,7 @@ else:
 
         for step in range(num_steps):
             action,log_prob,value=ppo.select_action(state)
-            next_state,reward,_ ,_ ,_=env.step(action)
+            next_state,reward,_ ,_ =custom_env.step(action)
             next_state = extract_state(next_state)
             next_state = observation_normalizer.normalize(next_state)
 
