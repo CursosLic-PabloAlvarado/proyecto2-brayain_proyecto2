@@ -21,20 +21,14 @@ class CustomAntEnv(gym.Wrapper):
         # Aquí puedes calcular la recompensa personalizada
         # Por ejemplo, si quieres dar una recompensa por moverse cierta distancia en x:
         x_position = next_state[0]
-        y_position = next_state[1]
+        #y_position = next_state[1]
         if self.prev_x_position is not None:
             x_distance = x_position - self.prev_x_position
             if x_distance > 0.01:
-                reward += 2
+                reward += 3
             elif x_distance < -0.01:
                 reward -= 1
-        if self.prev_y_position is not None:
-            y_distance = y_position - self.prev_y_position
-            if abs(y_distance) > 0.05:
-                reward -= 1
         self.prev_x_position = x_position
-        self.prev_y_position = y_position
-        self.num_steps += 1
 
         return next_state, reward, done, info
 
@@ -194,7 +188,7 @@ def extract_state(output):
 ppo=PPO(state_dim=state_dim,
        action_dim=action_dim)
 
-num_episodes=200
+num_episodes=300
 num_steps=3000
 num_steps_rend=10000
 
