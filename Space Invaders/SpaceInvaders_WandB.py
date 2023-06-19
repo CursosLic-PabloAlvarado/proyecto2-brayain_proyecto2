@@ -108,7 +108,7 @@ def play_one_step_train(env, state, model):
         replay_buffer.append((state, action, reward, next_state, done))
     return next_state, reward
 
-model_file = 'C:/Users/Pedro/Downloads/Proyecto 2/proyecto2-brayain_proyecto2/proyecto2-brayain_proyecto2/my_dqn_2.h5'
+model_file = 'C:/Users/pedro/Downloads/proyecto2-brayain_proyecto2/Space Invaders/my_dqn_f.h5'
 
 if os.path.isfile(model_file):
     model = keras.models.load_model(model_file)

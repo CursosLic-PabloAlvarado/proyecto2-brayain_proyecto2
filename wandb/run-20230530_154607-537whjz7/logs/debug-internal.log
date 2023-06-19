@@ -1,0 +1,349 @@
+2023-05-30 15:46:07,835 INFO    StreamThr :21092 [internal.py:wandb_internal():86] W&B internal server running at pid: 21092, started at: 2023-05-30 15:46:07.835364
+2023-05-30 15:46:07,839 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status
+2023-05-30 15:46:07,851 INFO    WriterThread:21092 [datastore.py:open_for_write():85] open: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\run-537whjz7.wandb
+2023-05-30 15:46:07,851 DEBUG   SenderThread:21092 [sender.py:send():375] send: header
+2023-05-30 15:46:07,903 DEBUG   SenderThread:21092 [sender.py:send():375] send: run
+2023-05-30 15:46:08,366 INFO    SenderThread:21092 [dir_watcher.py:__init__():219] watching files in: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files
+2023-05-30 15:46:08,366 INFO    SenderThread:21092 [sender.py:_start_run_threads():1124] run started: 537whjz7 with start time 1685483167.835364
+2023-05-30 15:46:08,366 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:08,367 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: check_version
+2023-05-30 15:46:08,367 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:08,368 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: check_version
+2023-05-30 15:46:08,749 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: run_start
+2023-05-30 15:46:08,769 DEBUG   HandlerThread:21092 [system_info.py:__init__():31] System info init
+2023-05-30 15:46:08,769 DEBUG   HandlerThread:21092 [system_info.py:__init__():46] System info init done
+2023-05-30 15:46:08,769 INFO    HandlerThread:21092 [system_monitor.py:start():181] Starting system monitor
+2023-05-30 15:46:08,769 INFO    SystemMonitor:21092 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-30 15:46:08,769 INFO    HandlerThread:21092 [system_monitor.py:probe():201] Collecting system info
+2023-05-30 15:46:08,781 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started cpu monitoring
+2023-05-30 15:46:08,781 DEBUG   HandlerThread:21092 [system_info.py:probe():195] Probing system
+2023-05-30 15:46:08,781 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started disk monitoring
+2023-05-30 15:46:08,785 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started memory monitoring
+2023-05-30 15:46:08,802 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started network monitoring
+2023-05-30 15:46:08,805 DEBUG   HandlerThread:21092 [system_info.py:_probe_git():180] Probing git
+2023-05-30 15:46:08,970 DEBUG   HandlerThread:21092 [system_info.py:_probe_git():188] Probing git done
+2023-05-30 15:46:08,970 DEBUG   HandlerThread:21092 [system_info.py:probe():240] Probing system done
+2023-05-30 15:46:08,970 DEBUG   HandlerThread:21092 [system_monitor.py:probe():210] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.10.9', 'heartbeatAt': '2023-05-30T21:46:08.781945', 'startedAt': '2023-05-30T21:46:07.819366', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': 'Downloads/proyecto2-brayain_proyecto2/Prueba atari.ipynb', 'root': 'C:/Users/pedro/Downloads/proyecto2-brayain_proyecto2', 'git': {'remote': 'https://github.com/CursosLic-PabloAlvarado/proyecto2-brayain_proyecto2.git', 'commit': '9116081c1b27957e800c3e1e3103d2a98410bccd'}, 'email': 'pedro.medinila@estudiantec.cr', 'host': 'DESKTOP-JLRK389', 'username': 'pedro', 'executable': 'C:\\Users\\pedro\\anaconda3\\python.exe', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 1801.0, 'min': 0.0, 'max': 1801.0}, 'cpu_freq_per_core': [{'current': 1801.0, 'min': 0.0, 'max': 1801.0}], 'disk': {'total': 236.25097274780273, 'used': 175.12192916870117}, 'memory': {'total': 14.822685241699219}}
+2023-05-30 15:46:08,970 INFO    HandlerThread:21092 [system_monitor.py:probe():211] Finished collecting system info
+2023-05-30 15:46:08,970 INFO    HandlerThread:21092 [system_monitor.py:probe():214] Publishing system info
+2023-05-30 15:46:08,974 DEBUG   HandlerThread:21092 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-05-30 15:46:08,974 DEBUG   HandlerThread:21092 [system_info.py:_save_pip():67] Saving pip packages done
+2023-05-30 15:46:08,978 DEBUG   HandlerThread:21092 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-05-30 15:46:09,378 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\requirements.txt
+2023-05-30 15:46:09,378 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-summary.json
+2023-05-30 15:46:09,382 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\conda-environment.yaml
+2023-05-30 15:46:30,536 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\conda-environment.yaml
+2023-05-30 15:46:30,672 DEBUG   HandlerThread:21092 [system_info.py:_save_conda():86] Saving conda packages done
+2023-05-30 15:46:30,672 INFO    HandlerThread:21092 [system_monitor.py:probe():216] Finished publishing system info
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-30 15:46:30,684 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:30,688 DEBUG   SenderThread:21092 [sender.py:send():375] send: files
+2023-05-30 15:46:30,688 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-05-30 15:46:30,716 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:46:30,716 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:46:30,924 DEBUG   SenderThread:21092 [sender.py:send():375] send: telemetry
+2023-05-30 15:46:30,968 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-30 15:46:30,968 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-30 15:46:30,968 DEBUG   SenderThread:21092 [sender.py:send():375] send: history
+2023-05-30 15:46:30,968 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:30,972 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:30,972 DEBUG   SenderThread:21092 [sender.py:send():375] send: history
+2023-05-30 15:46:30,972 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:30,972 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:31,192 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-30 15:46:31,192 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-30 15:46:31,192 DEBUG   SenderThread:21092 [sender.py:send():375] send: history
+2023-05-30 15:46:31,192 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:31,192 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:31,196 DEBUG   SenderThread:21092 [sender.py:send():375] send: history
+2023-05-30 15:46:31,196 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:31,196 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:31,356 INFO    wandb-upload_0:21092 [upload_job.py:push():137] Uploaded file C:\Users\pedro\AppData\Local\Temp\tmpzy000u_nwandb\d5yyh921-wandb-metadata.json
+2023-05-30 15:46:31,536 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-summary.json
+2023-05-30 15:46:31,536 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:31,536 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_created():278] file/dir created: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-metadata.json
+2023-05-30 15:46:31,752 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-30 15:46:31,756 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: partial_history
+2023-05-30 15:46:31,756 DEBUG   SenderThread:21092 [sender.py:send():375] send: history
+2023-05-30 15:46:31,756 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:31,756 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:31,760 DEBUG   SenderThread:21092 [sender.py:send():375] send: history
+2023-05-30 15:46:31,760 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: summary_record
+2023-05-30 15:46:31,760 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:46:32,549 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-summary.json
+2023-05-30 15:46:33,562 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:34,493 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:35,582 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:37,596 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:39,625 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:39,662 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:40,634 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\config.yaml
+2023-05-30 15:46:41,643 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:43,649 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:44,862 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:45,663 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:45,847 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:46:45,847 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:46:47,668 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:49,678 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:50,302 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:51,699 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:53,721 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:55,487 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:46:55,747 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:57,761 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:46:59,767 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:00,632 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:00,852 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:47:00,852 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:47:01,776 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:03,798 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:05,823 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:06,067 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:07,840 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:08,804 DEBUG   SystemMonitor:21092 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-30 15:47:08,804 DEBUG   SenderThread:21092 [sender.py:send():375] send: stats
+2023-05-30 15:47:09,861 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:11,306 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:11,874 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:13,880 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:15,891 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:16,031 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:47:16,031 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:47:16,584 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:17,912 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:19,928 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:21,945 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:22,057 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:23,958 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:25,973 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:27,371 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:27,991 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:30,004 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:31,041 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:47:31,041 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:47:32,021 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:32,534 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:34,034 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:36,047 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:38,033 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:38,061 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:38,809 DEBUG   SenderThread:21092 [sender.py:send():375] send: stats
+2023-05-30 15:47:40,082 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:42,095 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:43,288 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:44,104 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:46,125 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:46,213 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:47:46,213 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:47:48,146 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:48,535 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:50,160 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:52,178 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:54,024 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:47:54,185 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:56,190 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:58,203 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:47:59,245 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:00,230 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:01,090 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:48:01,090 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:48:02,247 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:04,256 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:04,408 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:06,273 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:08,279 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:08,819 DEBUG   SenderThread:21092 [sender.py:send():375] send: stats
+2023-05-30 15:48:09,410 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:10,303 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:12,325 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:14,344 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:14,836 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:16,102 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:48:16,102 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:48:16,362 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:18,376 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:20,330 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:20,386 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:22,403 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:24,417 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:25,522 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:26,431 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:28,446 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:30,451 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:31,012 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:31,216 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:48:31,216 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:48:32,473 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:34,495 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:36,288 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:36,505 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:38,523 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:38,827 DEBUG   SenderThread:21092 [sender.py:send():375] send: stats
+2023-05-30 15:48:40,535 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:41,904 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:42,549 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:44,566 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:46,320 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: stop_status
+2023-05-30 15:48:46,320 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: stop_status
+2023-05-30 15:48:46,587 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:47,135 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:48,604 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:50,620 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:52,633 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:52,697 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:54,638 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:55,718 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: pause
+2023-05-30 15:48:55,718 INFO    HandlerThread:21092 [handler.py:handle_request_pause():716] stopping system metrics thread or process
+2023-05-30 15:48:55,718 INFO    HandlerThread:21092 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-30 15:48:55,718 DEBUG   SystemMonitor:21092 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-30 15:48:55,718 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-30 15:48:55,718 DEBUG   SystemMonitor:21092 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-30 15:48:55,718 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined disk monitor
+2023-05-30 15:48:55,718 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined memory monitor
+2023-05-30 15:48:55,718 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined network monitor
+2023-05-30 15:48:55,722 DEBUG   SenderThread:21092 [sender.py:send():375] send: stats
+2023-05-30 15:48:56,131 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: resume
+2023-05-30 15:48:56,131 INFO    HandlerThread:21092 [handler.py:handle_request_resume():707] starting system metrics thread or process
+2023-05-30 15:48:56,131 INFO    HandlerThread:21092 [system_monitor.py:start():181] Starting system monitor
+2023-05-30 15:48:56,132 INFO    SystemMonitor:21092 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-05-30 15:48:56,141 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started cpu monitoring
+2023-05-30 15:48:56,141 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started disk monitoring
+2023-05-30 15:48:56,141 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started memory monitoring
+2023-05-30 15:48:56,153 INFO    SystemMonitor:21092 [interfaces.py:start():190] Started network monitoring
+2023-05-30 15:48:56,165 DEBUG   SenderThread:21092 [sender.py:send():375] send: telemetry
+2023-05-30 15:48:56,165 DEBUG   SenderThread:21092 [sender.py:send():375] send: exit
+2023-05-30 15:48:56,165 INFO    SenderThread:21092 [sender.py:send_exit():598] handling exit code: 0
+2023-05-30 15:48:56,165 INFO    SenderThread:21092 [sender.py:send_exit():600] handling runtime: 167
+2023-05-30 15:48:56,169 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:48:56,169 INFO    SenderThread:21092 [sender.py:send_exit():606] send defer
+2023-05-30 15:48:56,169 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,169 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 0
+2023-05-30 15:48:56,169 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,169 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-05-30 15:48:56,169 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 1
+2023-05-30 15:48:56,169 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,169 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 1
+2023-05-30 15:48:56,169 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,169 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-05-30 15:48:56,173 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 2
+2023-05-30 15:48:56,173 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,173 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 2
+2023-05-30 15:48:56,173 INFO    HandlerThread:21092 [system_monitor.py:finish():190] Stopping system monitor
+2023-05-30 15:48:56,173 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined cpu monitor
+2023-05-30 15:48:56,173 DEBUG   SystemMonitor:21092 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-05-30 15:48:56,173 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined disk monitor
+2023-05-30 15:48:56,173 DEBUG   SystemMonitor:21092 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-05-30 15:48:56,173 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined memory monitor
+2023-05-30 15:48:56,173 DEBUG   SystemMonitor:21092 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-05-30 15:48:56,173 INFO    HandlerThread:21092 [interfaces.py:finish():202] Joined network monitor
+2023-05-30 15:48:56,173 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 3
+2023-05-30 15:48:56,177 DEBUG   SenderThread:21092 [sender.py:send():375] send: stats
+2023-05-30 15:48:56,177 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,177 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 3
+2023-05-30 15:48:56,177 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 4
+2023-05-30 15:48:56,177 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,177 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 4
+2023-05-30 15:48:56,177 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 5
+2023-05-30 15:48:56,177 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,177 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 5
+2023-05-30 15:48:56,177 DEBUG   SenderThread:21092 [sender.py:send():375] send: summary
+2023-05-30 15:48:56,177 INFO    SenderThread:21092 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-05-30 15:48:56,181 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,181 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-05-30 15:48:56,181 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 6
+2023-05-30 15:48:56,181 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,181 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 6
+2023-05-30 15:48:56,181 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,181 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-05-30 15:48:56,185 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: status_report
+2023-05-30 15:48:56,350 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 7
+2023-05-30 15:48:56,350 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:56,350 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 7
+2023-05-30 15:48:56,350 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:56,350 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-05-30 15:48:56,654 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\config.yaml
+2023-05-30 15:48:56,654 INFO    Thread-16 :21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-summary.json
+2023-05-30 15:48:57,179 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-30 15:48:58,155 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 8
+2023-05-30 15:48:58,155 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: poll_exit
+2023-05-30 15:48:58,155 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:58,155 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 8
+2023-05-30 15:48:58,155 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:58,155 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-05-30 15:48:58,155 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 9
+2023-05-30 15:48:58,155 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:58,155 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 9
+2023-05-30 15:48:58,159 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:58,159 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-05-30 15:48:58,159 INFO    SenderThread:21092 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-05-30 15:48:58,187 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-30 15:48:58,663 INFO    SenderThread:21092 [dir_watcher.py:_on_file_modified():295] file/dir modified: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:58,663 INFO    SenderThread:21092 [dir_watcher.py:finish():395] scan: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files
+2023-05-30 15:48:58,663 INFO    SenderThread:21092 [dir_watcher.py:finish():409] scan save: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\conda-environment.yaml conda-environment.yaml
+2023-05-30 15:48:58,663 INFO    SenderThread:21092 [dir_watcher.py:finish():409] scan save: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\config.yaml config.yaml
+2023-05-30 15:48:58,667 INFO    SenderThread:21092 [dir_watcher.py:finish():409] scan save: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log output.log
+2023-05-30 15:48:58,671 INFO    SenderThread:21092 [dir_watcher.py:finish():409] scan save: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\requirements.txt requirements.txt
+2023-05-30 15:48:58,675 INFO    SenderThread:21092 [dir_watcher.py:finish():409] scan save: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-metadata.json wandb-metadata.json
+2023-05-30 15:48:58,675 INFO    SenderThread:21092 [dir_watcher.py:finish():409] scan save: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-summary.json wandb-summary.json
+2023-05-30 15:48:58,679 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 10
+2023-05-30 15:48:58,683 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: poll_exit
+2023-05-30 15:48:58,683 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:58,683 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 10
+2023-05-30 15:48:58,687 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:58,687 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-05-30 15:48:58,687 INFO    SenderThread:21092 [file_pusher.py:finish():167] shutting down file pusher
+2023-05-30 15:48:59,188 INFO    wandb-upload_1:21092 [upload_job.py:push():137] Uploaded file C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\config.yaml
+2023-05-30 15:48:59,192 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-30 15:48:59,192 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: poll_exit
+2023-05-30 15:48:59,445 INFO    wandb-upload_0:21092 [upload_job.py:push():137] Uploaded file C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\conda-environment.yaml
+2023-05-30 15:48:59,461 INFO    wandb-upload_4:21092 [upload_job.py:push():137] Uploaded file C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\wandb-summary.json
+2023-05-30 15:48:59,505 INFO    wandb-upload_2:21092 [upload_job.py:push():137] Uploaded file C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\output.log
+2023-05-30 15:48:59,517 INFO    wandb-upload_3:21092 [upload_job.py:push():137] Uploaded file C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\files\requirements.txt
+2023-05-30 15:48:59,721 INFO    Thread-15 (_thread_body):21092 [sender.py:transition_state():626] send defer: 11
+2023-05-30 15:48:59,721 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:59,721 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 11
+2023-05-30 15:48:59,721 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:59,721 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-05-30 15:48:59,721 INFO    SenderThread:21092 [file_pusher.py:join():172] waiting for file pusher
+2023-05-30 15:48:59,721 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 12
+2023-05-30 15:48:59,721 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:59,721 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 12
+2023-05-30 15:48:59,721 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:59,721 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-05-30 15:48:59,869 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 13
+2023-05-30 15:48:59,869 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:59,869 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 13
+2023-05-30 15:48:59,869 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:59,869 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-05-30 15:48:59,869 INFO    SenderThread:21092 [sender.py:transition_state():626] send defer: 14
+2023-05-30 15:48:59,869 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: defer
+2023-05-30 15:48:59,869 DEBUG   SenderThread:21092 [sender.py:send():375] send: final
+2023-05-30 15:48:59,869 INFO    HandlerThread:21092 [handler.py:handle_request_defer():170] handle defer: 14
+2023-05-30 15:48:59,869 DEBUG   SenderThread:21092 [sender.py:send():375] send: footer
+2023-05-30 15:48:59,869 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: defer
+2023-05-30 15:48:59,869 INFO    SenderThread:21092 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-05-30 15:48:59,869 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: poll_exit
+2023-05-30 15:48:59,869 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: server_info
+2023-05-30 15:48:59,869 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: get_summary
+2023-05-30 15:48:59,869 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: poll_exit
+2023-05-30 15:48:59,873 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: sampled_history
+2023-05-30 15:48:59,873 DEBUG   SenderThread:21092 [sender.py:send_request():402] send_request: server_info
+2023-05-30 15:49:00,113 DEBUG   HandlerThread:21092 [handler.py:handle_request():144] handle_request: shutdown
+2023-05-30 15:49:00,113 INFO    HandlerThread:21092 [handler.py:finish():842] shutting down handler
+2023-05-30 15:49:00,874 INFO    WriterThread:21092 [datastore.py:close():298] close: C:\Users\pedro\Downloads\proyecto2-brayain_proyecto2\wandb\run-20230530_154607-537whjz7\run-537whjz7.wandb
+2023-05-30 15:49:01,126 INFO    SenderThread:21092 [sender.py:finish():1550] shutting down sender
+2023-05-30 15:49:01,126 INFO    SenderThread:21092 [file_pusher.py:finish():167] shutting down file pusher
+2023-05-30 15:49:01,126 INFO    SenderThread:21092 [file_pusher.py:join():172] waiting for file pusher

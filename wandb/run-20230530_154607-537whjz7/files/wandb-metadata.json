@@ -1,0 +1,41 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.10.9",
+    "heartbeatAt": "2023-05-30T21:46:08.781945",
+    "startedAt": "2023-05-30T21:46:07.819366",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "Downloads/proyecto2-brayain_proyecto2/Prueba atari.ipynb",
+    "root": "C:/Users/pedro/Downloads/proyecto2-brayain_proyecto2",
+    "git": {
+        "remote": "https://github.com/CursosLic-PabloAlvarado/proyecto2-brayain_proyecto2.git",
+        "commit": "9116081c1b27957e800c3e1e3103d2a98410bccd"
+    },
+    "email": "pedro.medinila@estudiantec.cr",
+    "host": "DESKTOP-JLRK389",
+    "username": "pedro",
+    "executable": "C:\\Users\\pedro\\anaconda3\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 1801.0,
+        "min": 0.0,
+        "max": 1801.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1801.0,
+            "min": 0.0,
+            "max": 1801.0
+        }
+    ],
+    "disk": {
+        "total": 236.25097274780273,
+        "used": 175.12192916870117
+    },
+    "memory": {
+        "total": 14.822685241699219
+    }
+}
